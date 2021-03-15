@@ -1,0 +1,26 @@
+{
+    "name": "marvel_comics",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "db:create": "createdb marvel_comics",
+        "db:destroy": "dropdb marvel_comics",
+        "db:init": "psql -f schema.sql marvel_comics",
+        "db:seed": "psql -f seed.sql marvel_comics",
+        "db:reset": "npm run db:destroy; npm run db:create && npm run db:init && npm run db:seed",
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "keywords": [],
+    "author": "Hilda Robles",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "express-es6-template-engine": "^2.2.3",
+        "pg-promise": "^10.9.4",
+        "slugify": "^1.4.7"
+    }
+}
