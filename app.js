@@ -1,9 +1,11 @@
 'use strict';
 
 const http = require('http');
+const dotenv = require('dotenv');
+dotenv.config();
 
-const hostname = '127.0.0.1';
-const port = '3333';
+const hostname = '0.0.0.0';
+const port = process.env.PORT;
 const cors = require('cors');
 const express = require('express');
 const app = express();
